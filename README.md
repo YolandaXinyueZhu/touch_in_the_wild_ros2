@@ -90,10 +90,8 @@ Tested on **Ubuntu 22.04**.
 
    ```bash
    # Example: make a workspace in your home directory
-   mkdir -p ~/ros_ws
-   cd ~/ros_ws
-   git clone https://github.com/<your-org>/touch_in_the_wild_tactile.git
-   cd ~/ros_ws
+   git clone git@github.com:YolandaXinyueZhu/touch_in_the_wild_ros2.git
+   cd ~/touch_in_the_wild_ros2
    ```
 
 3. **Build the packages once (any one terminal)**
@@ -106,8 +104,8 @@ Tested on **Ubuntu 22.04**.
 
    ```bash
    # Terminal-specific session setup
-   source /opt/ros/humble/setup.bash    # ROS 2 core
-   source ~/ros_ws/install/setup.bash   # your workspace
+   colcon build 
+   source install/setup.bash  
    ```
 
    > *Why four?* — Each terminal will host one ROS node or script (sensor, viewer, QR display, recorder). Running them in separate shells keeps logs readable and lets you stop only the recorder when a session ends.
